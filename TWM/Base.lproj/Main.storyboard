@@ -549,21 +549,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pe-mR-r7Q">
-                                <rect key="frame" x="241" y="821" width="76" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQV-ke-8RD">
-                                <rect key="frame" x="320" y="30" width="94" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit Profile"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9t-CA-oi2">
-                                <rect key="frame" x="337" y="821" width="57" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Feed"/>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8T-p1-sju">
                                 <rect key="frame" x="861" y="361" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -626,20 +611,13 @@
                         <viewLayoutGuide key="safeArea" id="Vhp-u7-vih"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="N9t-CA-oi2" firstAttribute="baseline" secondItem="5Pe-mR-r7Q" secondAttribute="firstBaseline" id="1fK-7s-IAL"/>
-                            <constraint firstItem="zPN-4M-8mG" firstAttribute="top" secondItem="PQV-ke-8RD" secondAttribute="top" id="1tj-YD-5qV"/>
                             <constraint firstItem="s4R-mQ-S5l" firstAttribute="top" secondItem="2B9-oG-cY2" secondAttribute="bottom" constant="20" id="3Nt-hR-F6O"/>
                             <constraint firstItem="V8T-p1-sju" firstAttribute="leading" secondItem="iT1-lO-MQs" secondAttribute="leading" constant="861" id="84c-aX-9Bv"/>
-                            <constraint firstItem="Vhp-u7-vih" firstAttribute="trailing" secondItem="N9t-CA-oi2" secondAttribute="trailing" constant="20" id="8m3-wg-GdK"/>
-                            <constraint firstAttribute="trailing" secondItem="PQV-ke-8RD" secondAttribute="trailing" id="Ak8-GZ-QFU"/>
                             <constraint firstItem="Vhp-u7-vih" firstAttribute="trailing" secondItem="s4R-mQ-S5l" secondAttribute="trailing" constant="20" id="FND-5q-XHe"/>
                             <constraint firstItem="V8T-p1-sju" firstAttribute="top" secondItem="iT1-lO-MQs" secondAttribute="top" constant="361" id="Zc5-rO-9LL"/>
                             <constraint firstItem="zPN-4M-8mG" firstAttribute="top" secondItem="iT1-lO-MQs" secondAttribute="topMargin" constant="-14" id="dEN-yY-T4P"/>
                             <constraint firstItem="zPN-4M-8mG" firstAttribute="leading" secondItem="Vhp-u7-vih" secondAttribute="leading" constant="10" id="fjU-mj-C1j"/>
                             <constraint firstItem="s4R-mQ-S5l" firstAttribute="leading" secondItem="Vhp-u7-vih" secondAttribute="leading" constant="20" id="o8k-6h-HWg"/>
-                            <constraint firstItem="5Pe-mR-r7Q" firstAttribute="baseline" secondItem="N9t-CA-oi2" secondAttribute="baseline" id="q4L-EH-X6c"/>
-                            <constraint firstItem="5Pe-mR-r7Q" firstAttribute="top" secondItem="s4R-mQ-S5l" secondAttribute="bottom" constant="20" id="rZ0-VH-ybq"/>
-                            <constraint firstItem="Vhp-u7-vih" firstAttribute="bottom" secondItem="5Pe-mR-r7Q" secondAttribute="bottom" constant="10" id="xgU-wx-n2d"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -661,17 +639,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q69-4T-ccp">
-                                <rect key="frame" x="20" y="821" width="76" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0g-3a-YN5">
-                                <rect key="frame" x="320" y="30" width="94" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit Profile"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTG-ha-C0Z">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTG-ha-C0Z">
                                 <rect key="frame" x="337" y="821" width="57" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Feed"/>
@@ -737,14 +705,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2ix-kj-6Qb" firstAttribute="leading" secondItem="KTh-cC-HsV" secondAttribute="leading" constant="861" id="6pI-il-sPE"/>
-                            <constraint firstItem="ARH-4e-d0C" firstAttribute="top" secondItem="G0g-3a-YN5" secondAttribute="top" id="E94-c1-HNQ"/>
-                            <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="Q69-4T-ccp" secondAttribute="bottom" constant="10" id="FYf-xU-wvx"/>
                             <constraint firstItem="2ix-kj-6Qb" firstAttribute="top" secondItem="KTh-cC-HsV" secondAttribute="top" constant="361" id="GOm-DR-zuF"/>
                             <constraint firstItem="ARH-4e-d0C" firstAttribute="leading" secondItem="18w-1W-M8N" secondAttribute="leading" constant="10" id="JEB-YB-4LN"/>
-                            <constraint firstAttribute="trailing" secondItem="G0g-3a-YN5" secondAttribute="trailing" id="Oal-Fw-rDp"/>
-                            <constraint firstItem="Q69-4T-ccp" firstAttribute="baseline" secondItem="dTG-ha-C0Z" secondAttribute="baseline" id="TSM-v7-uz3"/>
-                            <constraint firstItem="dTG-ha-C0Z" firstAttribute="baseline" secondItem="Q69-4T-ccp" secondAttribute="firstBaseline" id="aFH-A0-C7E"/>
-                            <constraint firstItem="Q69-4T-ccp" firstAttribute="top" secondItem="puY-Pc-41M" secondAttribute="bottom" constant="20" id="eow-Ix-ZAk"/>
                             <constraint firstItem="puY-Pc-41M" firstAttribute="leading" secondItem="18w-1W-M8N" secondAttribute="leading" constant="20" id="nHb-bq-Ffa"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="trailing" secondItem="dTG-ha-C0Z" secondAttribute="trailing" constant="20" id="nP0-C5-Vc0"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="trailing" secondItem="puY-Pc-41M" secondAttribute="trailing" constant="20" id="nzH-nq-Uhf"/>
