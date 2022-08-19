@@ -11,6 +11,7 @@
 		1767B0F828AF7460005536FB /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F528AF7460005536FB /* PostTableViewCell.swift */; };
 		1767B0F928AF7460005536FB /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F628AF7460005536FB /* FeedTableViewController.swift */; };
 		1767B0FA28AF7460005536FB /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F728AF7460005536FB /* PostDetailsViewController.swift */; };
+		179A0BF728AFE3C800F5F5EB /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A0BF628AFE3C800F5F5EB /* EditPostViewController.swift */; };
 		6D664BFB2898591600977564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D664BFA2898591600977564 /* AppDelegate.swift */; };
 		6D664BFD2898591600977564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D664BFC2898591600977564 /* SceneDelegate.swift */; };
 		6D664BFF2898591600977564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D664BFE2898591600977564 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		1767B0F528AF7460005536FB /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		1767B0F628AF7460005536FB /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		1767B0F728AF7460005536FB /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		179A0BF628AFE3C800F5F5EB /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		6D664BF72898591600977564 /* TWM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D664BFA2898591600977564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D664BFC2898591600977564 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				1767B0F728AF7460005536FB /* PostDetailsViewController.swift */,
 				1767B0F628AF7460005536FB /* FeedTableViewController.swift */,
 				1767B0F528AF7460005536FB /* PostTableViewCell.swift */,
+				179A0BF628AFE3C800F5F5EB /* EditPostViewController.swift */,
 			);
 			path = TWM;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				6D664BFF2898591600977564 /* ViewController.swift in Sources */,
 				1767B0FA28AF7460005536FB /* PostDetailsViewController.swift in Sources */,
+				179A0BF728AFE3C800F5F5EB /* EditPostViewController.swift in Sources */,
 				1767B0F828AF7460005536FB /* PostTableViewCell.swift in Sources */,
 				6D664BFB2898591600977564 /* AppDelegate.swift in Sources */,
 				1767B0F928AF7460005536FB /* FeedTableViewController.swift in Sources */,
