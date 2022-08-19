@@ -541,10 +541,10 @@
             </objects>
             <point key="canvasLocation" x="728.98550724637687" y="742.63392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Post View Controller-->
         <scene sceneID="Soo-Pv-DiU">
             <objects>
-                <viewController id="Uo5-Az-C0S" sceneMemberID="viewController">
+                <viewController id="Uo5-Az-C0S" customClass="EditPostViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KTh-cC-HsV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
