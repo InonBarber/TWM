@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1767B0F428AF7429005536FB /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F328AF7429005536FB /* Student.swift */; };
-		1767B0F828AF7460005536FB /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F528AF7460005536FB /* StudentTableViewCell.swift */; };
-		1767B0F928AF7460005536FB /* StudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F628AF7460005536FB /* StudentsTableViewController.swift */; };
-		1767B0FA28AF7460005536FB /* StudentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F728AF7460005536FB /* StudentDetailsViewController.swift */; };
+		1767B0F428AF7429005536FB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F328AF7429005536FB /* Post.swift */; };
+		1767B0F828AF7460005536FB /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F528AF7460005536FB /* PostTableViewCell.swift */; };
+		1767B0F928AF7460005536FB /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F628AF7460005536FB /* FeedTableViewController.swift */; };
+		1767B0FA28AF7460005536FB /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767B0F728AF7460005536FB /* PostDetailsViewController.swift */; };
 		6D664BFB2898591600977564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D664BFA2898591600977564 /* AppDelegate.swift */; };
 		6D664BFD2898591600977564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D664BFC2898591600977564 /* SceneDelegate.swift */; };
 		6D664BFF2898591600977564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D664BFE2898591600977564 /* ViewController.swift */; };
@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1767B0F328AF7429005536FB /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		1767B0F528AF7460005536FB /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
-		1767B0F628AF7460005536FB /* StudentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsTableViewController.swift; sourceTree = "<group>"; };
-		1767B0F728AF7460005536FB /* StudentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetailsViewController.swift; sourceTree = "<group>"; };
+		1767B0F328AF7429005536FB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		1767B0F528AF7460005536FB /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		1767B0F628AF7460005536FB /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		1767B0F728AF7460005536FB /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		6D664BF72898591600977564 /* TWM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D664BFA2898591600977564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D664BFC2898591600977564 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		1767B0F228AF7429005536FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1767B0F328AF7429005536FB /* Student.swift */,
+				1767B0F328AF7429005536FB /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -80,9 +80,9 @@
 				6D664C032898591700977564 /* Assets.xcassets */,
 				6D664C052898591700977564 /* LaunchScreen.storyboard */,
 				6D664C082898591700977564 /* Info.plist */,
-				1767B0F728AF7460005536FB /* StudentDetailsViewController.swift */,
-				1767B0F628AF7460005536FB /* StudentsTableViewController.swift */,
-				1767B0F528AF7460005536FB /* StudentTableViewCell.swift */,
+				1767B0F728AF7460005536FB /* PostDetailsViewController.swift */,
+				1767B0F628AF7460005536FB /* FeedTableViewController.swift */,
+				1767B0F528AF7460005536FB /* PostTableViewCell.swift */,
 			);
 			path = TWM;
 			sourceTree = "<group>";
@@ -159,12 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D664BFF2898591600977564 /* ViewController.swift in Sources */,
-				1767B0FA28AF7460005536FB /* StudentDetailsViewController.swift in Sources */,
-				1767B0F828AF7460005536FB /* StudentTableViewCell.swift in Sources */,
+				1767B0FA28AF7460005536FB /* PostDetailsViewController.swift in Sources */,
+				1767B0F828AF7460005536FB /* PostTableViewCell.swift in Sources */,
 				6D664BFB2898591600977564 /* AppDelegate.swift in Sources */,
-				1767B0F928AF7460005536FB /* StudentsTableViewController.swift in Sources */,
+				1767B0F928AF7460005536FB /* FeedTableViewController.swift in Sources */,
 				6D664BFD2898591600977564 /* SceneDelegate.swift in Sources */,
-				1767B0F428AF7429005536FB /* Student.swift in Sources */,
+				1767B0F428AF7429005536FB /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

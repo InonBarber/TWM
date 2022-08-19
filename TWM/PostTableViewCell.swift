@@ -1,13 +1,7 @@
-//
-//  StudentTableViewCell.swift
-//  StudentApp
-//
-//  Created by Kely Sotsky on 06/04/2022.
-//
 
 import UIKit
 
-class StudentTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

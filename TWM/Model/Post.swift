@@ -1,14 +1,7 @@
-//
-//  Student.swift
-//  StudentApp
-//
-//  Created by Kely Sotsky on 06/04/2022.
-//
-
 import Foundation
 
 
-class Student{
+class Post{
     var name = ""
     var id = ""
     var avatarUrl = ""
