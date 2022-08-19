@@ -1,7 +1,4 @@
 //
-//  StudentDetailsViewController.swift
-//  StudentApp
-//
 //  Created by Naum Raviz on 19/08/2022.
 //
 

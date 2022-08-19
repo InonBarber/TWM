@@ -718,16 +718,16 @@
             </objects>
             <point key="canvasLocation" x="2516" y="743"/>
         </scene>
-        <!--Students List-->
+        <!--Posts List-->
         <scene sceneID="Nyu-Mf-YF3">
             <objects>
-                <tableViewController id="Hbg-bR-5M0" customClass="StudentsTableViewController" customModule="StudentApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Hbg-bR-5M0" userLabel="Posts List" customClass="FeedTableViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6VY-BN-7gT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" rowHeight="114" id="v4t-gZ-0Qi" customClass="StudentTableViewCell" customModule="StudentApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="114" id="v4t-gZ-0Qi" userLabel="postCell" customClass="PostTableViewCell" customModule="TWM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v4t-gZ-0Qi" id="nnr-op-Yii">
@@ -776,7 +776,7 @@
                             <outlet property="delegate" destination="Hbg-bR-5M0" id="3Ut-Tw-HCk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Students List" id="wd2-3w-iRV">
+                    <navigationItem key="navigationItem" title="Posts List" id="wd2-3w-iRV" userLabel="Posts List">
                         <barButtonItem key="backBarButtonItem" title="List" id="QuJ-aQ-EGP"/>
                     </navigationItem>
                 </tableViewController>
