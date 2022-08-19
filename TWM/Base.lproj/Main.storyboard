@@ -561,18 +561,30 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dI-dI-AGP">
-                                <rect key="frame" x="172" y="571" width="71.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
-                                </buttonConfiguration>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAC-rz-Tci">
                                 <rect key="frame" x="313" y="571" width="71.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Delete">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbM-mC-yBZ">
+                                <rect key="frame" x="76" y="203" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4n-Rm-dIF">
+                                <rect key="frame" x="282" y="206" width="50" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo.artframe" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-oi-8eO">
+                                <rect key="frame" x="165" y="571" width="84" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="SAVE">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
@@ -583,11 +595,11 @@
                             <constraint firstItem="2ix-kj-6Qb" firstAttribute="top" secondItem="KTh-cC-HsV" secondAttribute="top" constant="361" id="GOm-DR-zuF"/>
                             <constraint firstItem="dAC-rz-Tci" firstAttribute="top" secondItem="18w-1W-M8N" secondAttribute="top" constant="527" id="JqA-F5-nZu"/>
                             <constraint firstItem="dzP-GE-rT2" firstAttribute="top" secondItem="18w-1W-M8N" secondAttribute="top" constant="527" id="TEJ-yZ-Zlb"/>
-                            <constraint firstItem="dAC-rz-Tci" firstAttribute="leading" secondItem="3dI-dI-AGP" secondAttribute="trailing" constant="69.5" id="TSN-6Y-uY5"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="dAC-rz-Tci" secondAttribute="bottom" constant="260" id="X49-9t-2vD"/>
-                            <constraint firstItem="3dI-dI-AGP" firstAttribute="leading" secondItem="dzP-GE-rT2" secondAttribute="trailing" constant="80.5" id="dyW-9X-kf9"/>
-                            <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="3dI-dI-AGP" secondAttribute="bottom" constant="260" id="lDD-0q-eiI"/>
-                            <constraint firstItem="3dI-dI-AGP" firstAttribute="top" secondItem="18w-1W-M8N" secondAttribute="top" constant="527" id="p78-Zm-APi"/>
+                            <constraint firstItem="dAC-rz-Tci" firstAttribute="leading" secondItem="eCg-oi-8eO" secondAttribute="trailing" constant="64" id="f1C-p0-bFa"/>
+                            <constraint firstItem="eCg-oi-8eO" firstAttribute="leading" secondItem="dzP-GE-rT2" secondAttribute="trailing" constant="73.5" id="oAR-d4-f6c"/>
+                            <constraint firstItem="eCg-oi-8eO" firstAttribute="top" secondItem="18w-1W-M8N" secondAttribute="top" constant="527" id="qtr-v5-pC4"/>
+                            <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="eCg-oi-8eO" secondAttribute="bottom" constant="247" id="yBJ-9P-wI8"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="dzP-GE-rT2" secondAttribute="bottom" constant="260" id="yZx-iS-TQh"/>
                         </constraints>
                     </view>
@@ -777,7 +789,9 @@
     <resources>
         <image name="505579" width="758" height="533"/>
         <image name="avatar" width="100" height="100"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

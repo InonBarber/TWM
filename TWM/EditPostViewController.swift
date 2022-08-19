@@ -7,12 +7,24 @@
 
 import UIKit
 
-class EditPostViewController: UIViewController {
+class EditPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func takePicture(source: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = source;
+        imagePicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(source))
+        {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
     
 
