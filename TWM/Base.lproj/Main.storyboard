@@ -634,6 +634,71 @@
             </objects>
             <point key="canvasLocation" x="2516" y="743"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="FWM-FP-jtZ">
+            <objects>
+                <viewController id="hNT-dR-99d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scX-rC-hvC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Comment " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ld-MD-aKk">
+                                <rect key="frame" x="90" y="74" width="234" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAU-0z-kfx">
+                                <rect key="frame" x="70" y="175" width="274" height="343"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsT-Ly-txk">
+                                <rect key="frame" x="55" y="618" width="100" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Hbg-bR-5M0" kind="show" id="0fP-oK-HNL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDr-hw-uNa">
+                                <rect key="frame" x="282" y="618" width="77" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Hbg-bR-5M0" kind="show" id="fnp-z5-KYm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eCl-Tj-EAu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eCl-Tj-EAu" firstAttribute="bottom" secondItem="MsT-Ly-txk" secondAttribute="bottom" constant="180" id="9vk-YR-QNh"/>
+                            <constraint firstItem="LDr-hw-uNa" firstAttribute="leading" secondItem="MsT-Ly-txk" secondAttribute="trailing" constant="55" id="BZe-mq-d7w"/>
+                            <constraint firstItem="MsT-Ly-txk" firstAttribute="top" secondItem="CAU-0z-kfx" secondAttribute="bottom" constant="100" id="DL2-oF-Kr1"/>
+                            <constraint firstItem="CAU-0z-kfx" firstAttribute="top" secondItem="5ld-MD-aKk" secondAttribute="bottom" constant="65" id="J8w-Sp-YWG"/>
+                            <constraint firstItem="eCl-Tj-EAu" firstAttribute="bottom" secondItem="LDr-hw-uNa" secondAttribute="bottom" constant="180" id="K8J-Qc-v93"/>
+                            <constraint firstItem="5ld-MD-aKk" firstAttribute="leading" secondItem="eCl-Tj-EAu" secondAttribute="leading" constant="90" id="KcK-Pp-aRn"/>
+                            <constraint firstItem="eCl-Tj-EAu" firstAttribute="trailing" secondItem="5ld-MD-aKk" secondAttribute="trailing" constant="90" id="PHC-W6-xZr"/>
+                            <constraint firstItem="LDr-hw-uNa" firstAttribute="leading" secondItem="MsT-Ly-txk" secondAttribute="trailing" constant="55" id="RLX-gs-hie"/>
+                            <constraint firstItem="MsT-Ly-txk" firstAttribute="leading" secondItem="eCl-Tj-EAu" secondAttribute="leading" constant="55" id="TZl-gb-zbP"/>
+                            <constraint firstItem="5ld-MD-aKk" firstAttribute="top" secondItem="eCl-Tj-EAu" secondAttribute="top" constant="30" id="U73-PO-dCk"/>
+                            <constraint firstItem="CAU-0z-kfx" firstAttribute="leading" secondItem="eCl-Tj-EAu" secondAttribute="leading" constant="70" id="VwC-hb-mPd"/>
+                            <constraint firstItem="eCl-Tj-EAu" firstAttribute="trailing" secondItem="LDr-hw-uNa" secondAttribute="trailing" constant="55" id="Wah-s5-yQ3"/>
+                            <constraint firstItem="eCl-Tj-EAu" firstAttribute="trailing" secondItem="CAU-0z-kfx" secondAttribute="trailing" constant="70" id="fNq-Us-t3F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YX7-EU-g4l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gcb-YZ-4dx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3405.7971014492755" y="756.69642857142856"/>
+        </scene>
         <!--Posts List-->
         <scene sceneID="Nyu-Mf-YF3">
             <objects>
@@ -669,6 +734,9 @@
                                             <rect key="frame" x="94" y="288.5" width="198" height="32.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Add Comment"/>
+                                            <connections>
+                                                <segue destination="hNT-dR-99d" kind="show" id="biE-1g-zE9"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvv-Rz-AFH">
                                             <rect key="frame" x="319.5" y="20" width="79.5" height="38"/>
@@ -739,8 +807,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YGm-WZ-qc3"/>
-        <segue reference="K1v-7H-Mul"/>
+        <segue reference="0fP-oK-HNL"/>
+        <segue reference="Way-rZ-aCs"/>
         <segue reference="AkD-6c-ULb"/>
     </inferredMetricsTieBreakers>
     <resources>
