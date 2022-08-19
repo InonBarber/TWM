@@ -706,7 +706,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuo-lb-Bmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663.7681159420292" y="756.69642857142856"/>
+            <point key="canvasLocation" x="1687" y="753"/>
         </scene>
     </scenes>
     <resources>
