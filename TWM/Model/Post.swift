@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Student{
+class Post{
     var name = ""
     var id = ""
     var avatarUrl = ""

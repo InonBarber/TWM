@@ -7,16 +7,16 @@
 
 import UIKit
 
-class StudentsTableViewController: UITableViewController {
+class FeedTableViewController: UITableViewController {
 
-    var data = [Student]()
+    var data = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data.append(Student(name: "Kely", id: "444", avatarUrl: ""))
-        data.append(Student(name: "Kely1", id: "333", avatarUrl: ""))
-        data.append(Student(name: "Kely2", id: "222", avatarUrl: ""))
-        data.append(Student(name: "Kely3", id: "111", avatarUrl: ""))
+        data.append(Post(name: "Kely", id: "444", avatarUrl: ""))
+        data.append(Post(name: "Kely1", id: "333", avatarUrl: ""))
+        data.append(Post(name: "Kely2", id: "222", avatarUrl: ""))
+        data.append(Post(name: "Kely3", id: "111", avatarUrl: ""))
 
     }
 
@@ -32,7 +32,7 @@ class StudentsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath) as! StudentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         let st = data[indexPath.row]
         cell.nameLabel.text = st.name
         cell.id = st.id
@@ -44,7 +44,7 @@ class StudentsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NSLog("Selcted row at \(indexPath.row)")
         selectedRow = indexPath.row
-        performSegue(withIdentifier: "openStudentDetails", sender: self)
+        performSegue(withIdentifier: "openPostDetails", sender: self)
         
         
     }
@@ -88,10 +88,10 @@ class StudentsTableViewController: UITableViewController {
 
 //     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "openStudentDetails"){
-            let dvc = segue.destination as! StudentDetailsViewController
+        if(segue.identifier == "openPostDetails"){
+            let dvc = segue.destination as! PostDetailsViewController
             let st = data[selectedRow]
-            dvc.student = st
+            dvc.post = st
         }
     }
     

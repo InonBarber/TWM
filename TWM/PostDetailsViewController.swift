@@ -2,18 +2,18 @@
 //  StudentDetailsViewController.swift
 //  StudentApp
 //
-//  Created by Kely Sotsky on 06/04/2022.
+//  Created by Naum Raviz on 19/08/2022.
 //
 
 import UIKit
 
-class StudentDetailsViewController: UIViewController {
+class PostDetailsViewController: UIViewController {
 
-    var student:Student?{
+    var post:Post?{
         didSet{
             if(idLabel != nil){
-                idLabel.text = student?.id
-                nameLabel.text = student?.name
+                idLabel.text = post?.id
+                nameLabel.text = post?.name
             }
         }
     }
@@ -25,9 +25,9 @@ class StudentDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let student = student {
-            idLabel.text = student.id
-            nameLabel.text = student.name
+        if let post = post {
+            idLabel.text = post.id
+            nameLabel.text = post.name
         }
     }
     
