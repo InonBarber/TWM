@@ -18,6 +18,8 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         
         takePicture(source: .camera)
     }
+
+    @IBOutlet weak var postImg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +36,17 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         {
             self.present(imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    
+    var selectedImage: UIImage?
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        self.postImg.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
 

@@ -568,17 +568,8 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbM-mC-yBZ">
-                                <rect key="frame" x="76" y="203" width="55" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system"/>
-                                <connections>
-                                    <action selector="openCamera:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="e6x-hQ-9iP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4n-Rm-dIF">
-                                <rect key="frame" x="282" y="206" width="50" height="31"/>
+                                <rect key="frame" x="323" y="441" width="50" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="photo.artframe" catalog="system"/>
@@ -592,6 +583,19 @@
                                 <buttonConfiguration key="configuration" style="filled" title="SAVE">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-KJ-DH2">
+                                <rect key="frame" x="5" y="116" width="414" height="276"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbM-mC-yBZ">
+                                <rect key="frame" x="36" y="441" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system"/>
+                                <connections>
+                                    <action selector="openCamera:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="e6x-hQ-9iP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="18w-1W-M8N"/>
@@ -609,6 +613,9 @@
                             <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="dzP-GE-rT2" secondAttribute="bottom" constant="260" id="yZx-iS-TQh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postImg" destination="Fh4-KJ-DH2" id="PXe-Ju-JHl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZR-PJ-yfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
