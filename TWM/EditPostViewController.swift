@@ -9,14 +9,15 @@ import UIKit
 
 class EditPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    @IBAction func openCamera(_ sender: Any) {
-        takePicture(source: .camera)
-    }
-    
+
     @IBAction func openGallery(_ sender: Any) {
+        
         takePicture(source: .photoLibrary)
     }
-
+    @IBAction func openCamera(_ sender: Any) {
+        
+        takePicture(source: .camera)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
