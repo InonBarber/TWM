@@ -6,14 +6,6 @@ class FeedTableViewController: UITableViewController {
 
     var data = [Post]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        data.append(Post(name: "Kely", id: "444", avatarUrl: ""))
-        data.append(Post(name: "Kely1", id: "333", avatarUrl: ""))
-        data.append(Post(name: "Kely2", id: "222", avatarUrl: ""))
-        data.append(Post(name: "Kely3", id: "111", avatarUrl: ""))
-
-    }
 
     // MARK: - Table view data source
 
@@ -26,14 +18,11 @@ class FeedTableViewController: UITableViewController {
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-        let st = data[indexPath.row]
-        cell.nameLabel.text = st.name
-        cell.id = st.id
-
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+//        let st = data[indexPath.row]
+//        return cell
+//    }
     
     var selectedRow = 0
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

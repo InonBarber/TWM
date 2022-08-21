@@ -47,7 +47,7 @@ public class PostDao: NSManagedObject {
         post.id = post.id
         post.title = post.title
         post.email = post.email
-        post.description = post.description
+        post._description = post.description
         post.photo = post.photo
         post.isPostDeleted = post.isPostDeleted
         do{
@@ -66,7 +66,7 @@ public class PostDao: NSManagedObject {
         post.id = post.id
         post.title = post.title
         post.email = post.email
-        post.description = post.description
+        post._description = post.description
         post.photo = post.photo
         post.isPostDeleted = post.isPostDeleted
 

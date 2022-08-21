@@ -19,8 +19,8 @@ class Post: Hashable, Equatable{
     init(post:PostDao){
         id = post.id
         title = post.title
-        email = post.userName
-        description = post.post_description
+        email = post.email
+        description = post.description
         photo = post.photo
         isPostDeleted = post.isPostDeleted
     }

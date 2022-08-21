@@ -75,10 +75,8 @@ class ModelFirebase{
         let id = String(post.id!)
         db.collection("Posts").document(id).updateData(    [
             "description": post.description!,
-            "difficulty": post.difficulty!,
-            "location": post.location!,
             "photo": post.photo!,
-            "userName": post.userName!,
+            "email": post.email!,
             "lastUpdated": FieldValue.serverTimestamp(),
             "title": post.title!,
             "isPostDeleted": post.isPostDeleted!
@@ -202,9 +200,8 @@ class ModelFirebase{
         let id = String(user.email!)
         db.collection("Users").document(id).updateData(    [
             "email": user.email!,
-            "fullName": user.fullName!,
-            "nickName": user.nickName!,
-            "photo": user.photo!,
+            "firstName": user.firstName!,
+            "lastName": user.lastName!,
             "posts": user.posts
             
         ]) { (error) in

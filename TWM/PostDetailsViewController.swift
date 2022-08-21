@@ -10,7 +10,7 @@ class PostDetailsViewController: UIViewController {
         didSet{
             if(idLabel != nil){
                 idLabel.text = post?.id
-                nameLabel.text = post?.name
+                nameLabel.text = post?.email
             }
         }
     }
@@ -24,7 +24,7 @@ class PostDetailsViewController: UIViewController {
 
         if let post = post {
             idLabel.text = post.id
-            nameLabel.text = post.name
+            nameLabel.text = post.email
         }
     }
     
