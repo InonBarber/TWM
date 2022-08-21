@@ -13,7 +13,7 @@ import UIKit
 import FirebaseAuth
 
 
-class ModelFirebase {
+class ModelFirebase{
     
     let db = Firestore.firestore()
     let storage = Storage.storage()
@@ -139,7 +139,7 @@ class ModelFirebase {
         }
     }
     
-    func add(user:User, completion:@escaping ()->Void){
+    func addUser(user:User, completion:@escaping ()->Void){
         db.collection("Users").document(user.email!)
             .setData(user.toJson())
         { err in
