@@ -335,7 +335,7 @@
         <!--Edit Profile-->
         <scene sceneID="zaS-IW-yJq">
             <objects>
-                <viewController id="cLD-cY-fcQ" sceneMemberID="viewController">
+                <viewController id="cLD-cY-fcQ" customClass="EditProfileViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AeL-Zp-HLZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -367,6 +367,9 @@
                                 <rect key="frame" x="156.5" y="213" width="237.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="firstNameTxt:" destination="P1I-TK-zje" eventType="editingDidEnd" id="pQh-1w-S7u"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXC-d9-JnN">
                                 <rect key="frame" x="155.5" y="292" width="238.5" height="34"/>
@@ -396,6 +399,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="cancleBtn:" destination="cLD-cY-fcQ" eventType="touchUpInside" id="4Q8-50-jyA"/>
                                     <segue destination="uHL-rm-y4I" kind="show" id="OGo-4Q-lYy"/>
                                 </connections>
                             </button>
@@ -406,6 +410,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="saveBtn:" destination="cLD-cY-fcQ" eventType="touchUpInside" id="T6t-jQ-VND"/>
                                     <segue destination="uHL-rm-y4I" kind="show" id="K1v-7H-Mul"/>
                                 </connections>
                             </button>
@@ -446,15 +451,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="pRv-8M-9fD"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="HgL-tt-JyR" id="hhJ-Te-Z64"/>
+                        <outlet property="firstNameTxt" destination="ELX-78-9Jh" id="OJp-fU-UPZ"/>
+                        <outlet property="lastNameTxt" destination="DXC-d9-JnN" id="i3u-Xx-has"/>
+                        <outlet property="phoneTxt" destination="PnE-yH-l4y" id="J7b-Bj-9SD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIx-xy-fKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="P1I-TK-zje" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3426.0869565217395" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="jH7-2H-biq">
             <objects>
-                <viewController id="frs-RX-APY" sceneMemberID="viewController">
+                <viewController id="frs-RX-APY" customClass="RegisterViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="85X-Dh-Dca">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -527,6 +539,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="register:" destination="frs-RX-APY" eventType="touchUpInside" id="yhM-qU-WcF"/>
                                     <segue destination="Hbg-bR-5M0" kind="show" id="adJ-QP-vZd"/>
                                 </connections>
                             </button>
@@ -569,6 +582,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IN8-pI-rkf"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="Ykp-Dp-SvU" id="D6B-8G-E70"/>
+                        <outlet property="firstNameTxt" destination="B0x-0c-XOU" id="3Vl-4P-MQ7"/>
+                        <outlet property="lastNameTxt" destination="TCy-Ai-Kzk" id="DRc-Z1-Ule"/>
+                        <outlet property="passwordTxt" destination="xdG-Af-amM" id="jtS-nn-Mdv"/>
+                        <outlet property="phoneTxt" destination="jXH-zO-l3n" id="pKK-An-GYN"/>
+                        <outlet property="register" destination="RW9-Np-MtI" id="9mb-Q5-UHW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ta2-za-fTg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -964,8 +985,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FeW-Fh-kgU"/>
-        <segue reference="YGm-WZ-qc3"/>
+        <segue reference="adJ-QP-vZd"/>
         <segue reference="OGo-4Q-lYy"/>
         <segue reference="AkD-6c-ULb"/>
     </inferredMetricsTieBreakers>
