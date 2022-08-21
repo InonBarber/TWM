@@ -5,7 +5,12 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
 
 
 
+    @IBOutlet weak var descriptionTxt: UITextField!
     @IBOutlet weak var postImg: UIImageView!
+
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBAction func saveBtn(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
