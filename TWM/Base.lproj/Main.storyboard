@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uo5-Az-C0S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="frs-RX-APY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="6mp-vq-f4U">
             <objects>
-                <viewController id="FnL-dp-W5S" sceneMemberID="viewController">
+                <viewController id="FnL-dp-W5S" customClass="LoginViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Il-0s-5Vi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,8 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="loginBtn:" destination="FnL-dp-W5S" eventType="touchUpInside" id="Nlo-oI-7Uo"/>
+                                    <action selector="takeMeInBtn:" destination="FnL-dp-W5S" eventType="touchUpInside" id="gh4-fn-0me"/>
                                     <segue destination="Hbg-bR-5M0" kind="show" id="UT8-Oj-IBZ"/>
                                 </connections>
                             </button>
@@ -56,6 +58,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="register:" destination="FnL-dp-W5S" eventType="touchUpInside" id="yy9-s1-jt4"/>
                                     <segue destination="frs-RX-APY" kind="show" id="vhX-Hg-ODC"/>
                                 </connections>
                             </button>
@@ -91,6 +94,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nVW-U0-8GQ"/>
+                    <connections>
+                        <outlet property="email" destination="1JY-vN-F4D" id="C6M-Yc-Oy4"/>
+                        <outlet property="emailTxt" destination="1JY-vN-F4D" id="KgP-Zd-7pg"/>
+                        <outlet property="loginBtn" destination="1gl-zv-p07" id="dKZ-sh-nt2"/>
+                        <outlet property="passwordTxt" destination="P6f-8S-GdI" id="HIi-CG-ArE"/>
+                        <outlet property="registerBtn" destination="X3A-w5-rkR" id="HA7-qy-ath"/>
+                        <outlet property="takeMeInBtn" destination="1gl-zv-p07" id="TYl-zv-aF2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBd-xh-wtr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -937,7 +948,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YGm-WZ-qc3"/>
+        <segue reference="UT8-Oj-IBZ"/>
         <segue reference="Way-rZ-aCs"/>
         <segue reference="AkD-6c-ULb"/>
     </inferredMetricsTieBreakers>
