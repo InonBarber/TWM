@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uo5-Az-C0S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="frs-RX-APY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="6mp-vq-f4U">
             <objects>
-                <viewController id="FnL-dp-W5S" sceneMemberID="viewController">
+                <viewController id="FnL-dp-W5S" customClass="LoginViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Il-0s-5Vi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,8 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="loginBtn:" destination="FnL-dp-W5S" eventType="touchUpInside" id="Nlo-oI-7Uo"/>
+                                    <action selector="takeMeInBtn:" destination="FnL-dp-W5S" eventType="touchUpInside" id="gh4-fn-0me"/>
                                     <segue destination="Hbg-bR-5M0" kind="show" id="UT8-Oj-IBZ"/>
                                 </connections>
                             </button>
@@ -56,6 +58,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="register:" destination="FnL-dp-W5S" eventType="touchUpInside" id="yy9-s1-jt4"/>
                                     <segue destination="frs-RX-APY" kind="show" id="vhX-Hg-ODC"/>
                                 </connections>
                             </button>
@@ -91,6 +94,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nVW-U0-8GQ"/>
+                    <connections>
+                        <outlet property="email" destination="1JY-vN-F4D" id="C6M-Yc-Oy4"/>
+                        <outlet property="emailTxt" destination="1JY-vN-F4D" id="KgP-Zd-7pg"/>
+                        <outlet property="loginBtn" destination="1gl-zv-p07" id="dKZ-sh-nt2"/>
+                        <outlet property="passwordTxt" destination="P6f-8S-GdI" id="HIi-CG-ArE"/>
+                        <outlet property="registerBtn" destination="X3A-w5-rkR" id="HA7-qy-ath"/>
+                        <outlet property="takeMeInBtn" destination="1gl-zv-p07" id="TYl-zv-aF2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBd-xh-wtr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +110,7 @@
         <!--Profile-->
         <scene sceneID="6ai-In-ufh">
             <objects>
-                <viewController title="Profile" id="uHL-rm-y4I" sceneMemberID="viewController">
+                <viewController title="Profile" id="uHL-rm-y4I" customClass="ProfileViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5xv-fh-hDb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,6 +182,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="firstNameTxt:" destination="79F-SL-kZv" eventType="editingDidEnd" id="HyD-VZ-4Df"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdi-Fr-D2a">
                                 <rect key="frame" x="142" y="337" width="252" height="34"/>
@@ -217,6 +231,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Edit Post"/>
                                 <connections>
+                                    <action selector="editPostBtn:" destination="79F-SL-kZv" eventType="touchUpInside" id="odD-JM-Hea"/>
+                                    <action selector="editPostBtn:" destination="uHL-rm-y4I" eventType="touchUpInside" id="w3t-X0-l5f"/>
                                     <segue destination="Uo5-Az-C0S" kind="show" id="QHK-u1-0Fs"/>
                                 </connections>
                             </button>
@@ -225,6 +241,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Post"/>
                                 <connections>
+                                    <action selector="addPostBtn:" destination="79F-SL-kZv" eventType="touchUpInside" id="Q5k-LB-cRZ"/>
+                                    <action selector="addPostBtn:" destination="uHL-rm-y4I" eventType="touchUpInside" id="hfS-Xs-RT2"/>
                                     <segue destination="z18-TA-wZg" kind="show" id="TIZ-0u-thh"/>
                                 </connections>
                             </button>
@@ -300,15 +318,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="kDf-6S-bO6"/>
+                    <connections>
+                        <outlet property="addPostBtn" destination="7cB-LK-pbL" id="sHu-F0-dEw"/>
+                        <outlet property="editPostBtn" destination="sKs-u3-3ib" id="y43-JK-E5n"/>
+                        <outlet property="emailTxt" destination="LA4-sU-2n2" id="SmS-cT-LOP"/>
+                        <outlet property="firstNameTxt" destination="zdi-Fr-D2a" id="hvW-Lx-bhk"/>
+                        <outlet property="lastNameTxt" destination="LA4-sU-2n2" id="2Ct-fP-uZd"/>
+                        <outlet property="phoneTxt" destination="dHu-ew-PaP" id="wdG-R2-utA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="in2-nF-SSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="79F-SL-kZv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2597.1014492753625" y="62.946428571428569"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="zaS-IW-yJq">
             <objects>
-                <viewController id="cLD-cY-fcQ" sceneMemberID="viewController">
+                <viewController id="cLD-cY-fcQ" customClass="EditProfileViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AeL-Zp-HLZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,6 +367,9 @@
                                 <rect key="frame" x="156.5" y="213" width="237.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="firstNameTxt:" destination="P1I-TK-zje" eventType="editingDidEnd" id="pQh-1w-S7u"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXC-d9-JnN">
                                 <rect key="frame" x="155.5" y="292" width="238.5" height="34"/>
@@ -369,6 +399,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="cancleBtn:" destination="cLD-cY-fcQ" eventType="touchUpInside" id="4Q8-50-jyA"/>
                                     <segue destination="uHL-rm-y4I" kind="show" id="OGo-4Q-lYy"/>
                                 </connections>
                             </button>
@@ -379,6 +410,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="saveBtn:" destination="cLD-cY-fcQ" eventType="touchUpInside" id="T6t-jQ-VND"/>
                                     <segue destination="uHL-rm-y4I" kind="show" id="K1v-7H-Mul"/>
                                 </connections>
                             </button>
@@ -419,15 +451,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="pRv-8M-9fD"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="HgL-tt-JyR" id="hhJ-Te-Z64"/>
+                        <outlet property="firstNameTxt" destination="ELX-78-9Jh" id="OJp-fU-UPZ"/>
+                        <outlet property="lastNameTxt" destination="DXC-d9-JnN" id="i3u-Xx-has"/>
+                        <outlet property="phoneTxt" destination="PnE-yH-l4y" id="J7b-Bj-9SD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIx-xy-fKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="P1I-TK-zje" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3426.0869565217395" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="jH7-2H-biq">
             <objects>
-                <viewController id="frs-RX-APY" sceneMemberID="viewController">
+                <viewController id="frs-RX-APY" customClass="RegisterViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="85X-Dh-Dca">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -500,6 +539,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="register:" destination="frs-RX-APY" eventType="touchUpInside" id="yhM-qU-WcF"/>
                                     <segue destination="Hbg-bR-5M0" kind="show" id="adJ-QP-vZd"/>
                                 </connections>
                             </button>
@@ -542,6 +582,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IN8-pI-rkf"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="Ykp-Dp-SvU" id="D6B-8G-E70"/>
+                        <outlet property="firstNameTxt" destination="B0x-0c-XOU" id="3Vl-4P-MQ7"/>
+                        <outlet property="lastNameTxt" destination="TCy-Ai-Kzk" id="DRc-Z1-Ule"/>
+                        <outlet property="passwordTxt" destination="xdG-Af-amM" id="jtS-nn-Mdv"/>
+                        <outlet property="phoneTxt" destination="jXH-zO-l3n" id="pKK-An-GYN"/>
+                        <outlet property="register" destination="RW9-Np-MtI" id="9mb-Q5-UHW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ta2-za-fTg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -566,6 +614,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Cancle">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancleBtn:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="pr4-oc-I5d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAC-rz-Tci">
                                 <rect key="frame" x="322" y="563" width="71.5" height="31"/>
@@ -573,6 +624,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Delete">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteBtn:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="ov2-AU-y6L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-oi-8eO">
                                 <rect key="frame" x="165" y="563" width="84" height="32"/>
@@ -580,6 +634,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="SAVE">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveBtn:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="d7X-uo-h7e"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-KJ-DH2">
                                 <rect key="frame" x="0.0" y="88" width="414" height="276"/>
@@ -593,7 +650,7 @@
                                     <action selector="openCamera:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="e6x-hQ-9iP"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ewv-OH-JMq">
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ewv-OH-JMq">
                                 <rect key="frame" x="20" y="460" width="374" height="45.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -606,10 +663,17 @@
                                     <action selector="openGallery:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="zMF-bd-j8Y"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wus-Ly-6xD">
+                                <rect key="frame" x="90" y="55" width="234" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="18w-1W-M8N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Wus-Ly-6xD" firstAttribute="top" secondItem="18w-1W-M8N" secondAttribute="top" constant="11" id="6dw-ah-rq6"/>
                             <constraint firstItem="dzP-GE-rT2" firstAttribute="top" secondItem="Ewv-OH-JMq" secondAttribute="bottom" constant="57.5" id="6mi-7p-6Jr"/>
                             <constraint firstItem="2ix-kj-6Qb" firstAttribute="leading" secondItem="KTh-cC-HsV" secondAttribute="leading" constant="861" id="6pI-il-sPE"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="trailing" secondItem="Ewv-OH-JMq" secondAttribute="trailing" constant="20" id="8SG-RS-hKX"/>
@@ -617,6 +681,7 @@
                             <constraint firstItem="IbM-mC-yBZ" firstAttribute="leading" secondItem="18w-1W-M8N" secondAttribute="leading" constant="20" id="Jhc-61-sPR"/>
                             <constraint firstItem="Ewv-OH-JMq" firstAttribute="top" secondItem="IbM-mC-yBZ" secondAttribute="bottom" constant="57" id="MKa-9a-5l6"/>
                             <constraint firstItem="eCg-oi-8eO" firstAttribute="top" secondItem="Ewv-OH-JMq" secondAttribute="bottom" constant="57.5" id="MPa-aC-p1Y"/>
+                            <constraint firstItem="18w-1W-M8N" firstAttribute="trailing" secondItem="Wus-Ly-6xD" secondAttribute="trailing" constant="90" id="PvO-15-oGA"/>
                             <constraint firstItem="Ewv-OH-JMq" firstAttribute="leading" secondItem="18w-1W-M8N" secondAttribute="leading" constant="20" id="QYT-Am-VQF"/>
                             <constraint firstItem="dAC-rz-Tci" firstAttribute="top" secondItem="Ewv-OH-JMq" secondAttribute="bottom" constant="57.5" id="TVc-qE-snd"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="dAC-rz-Tci" secondAttribute="bottom" constant="260" id="X49-9t-2vD"/>
@@ -626,10 +691,13 @@
                             <constraint firstItem="Ewv-OH-JMq" firstAttribute="top" secondItem="u4n-Rm-dIF" secondAttribute="bottom" constant="60" id="rtf-f2-p19"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="eCg-oi-8eO" secondAttribute="bottom" constant="247" id="yBJ-9P-wI8"/>
                             <constraint firstItem="18w-1W-M8N" firstAttribute="bottom" secondItem="dzP-GE-rT2" secondAttribute="bottom" constant="260" id="yZx-iS-TQh"/>
+                            <constraint firstItem="Wus-Ly-6xD" firstAttribute="leading" secondItem="18w-1W-M8N" secondAttribute="leading" constant="90" id="zqy-hY-k3F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eqf-go-3we"/>
                     <connections>
+                        <outlet property="description" destination="Ewv-OH-JMq" id="1Lx-e3-IfZ"/>
+                        <outlet property="descriptionBtn" destination="Ewv-OH-JMq" id="tz0-6m-JOJ"/>
                         <outlet property="postImg" destination="Fh4-KJ-DH2" id="PXe-Ju-JHl"/>
                     </connections>
                 </viewController>
@@ -637,10 +705,10 @@
             </objects>
             <point key="canvasLocation" x="3424.6376811594205" y="1634.5982142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Comment View Controller-->
         <scene sceneID="FWM-FP-jtZ">
             <objects>
-                <viewController id="hNT-dR-99d" sceneMemberID="viewController">
+                <viewController id="hNT-dR-99d" customClass="AddCommentViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scX-rC-hvC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -792,7 +860,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuo-lb-Bmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="810"/>
+            <point key="canvasLocation" x="1709" y="773"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DYN-5B-APD">
@@ -877,10 +945,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="D6q-8F-aJv">
-                                <rect key="frame" x="0.0" y="88" width="414" height="276"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEH-Of-zZt">
                                 <rect key="frame" x="310" y="573" width="84" height="44"/>
                                 <state key="normal" title="Button"/>
@@ -889,9 +953,10 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="save:" destination="z18-TA-wZg" eventType="touchUpInside" id="tuu-R2-dve"/>
+                                    <action selector="saveBtn:" destination="z18-TA-wZg" eventType="touchUpInside" id="lNS-YV-zI0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IXX-aA-3Ew">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IXX-aA-3Ew">
                                 <rect key="frame" x="20" y="492" width="374" height="45.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -912,13 +977,25 @@
                                     <action selector="openGallery:" destination="Uo5-Az-C0S" eventType="touchUpInside" id="6IG-x9-bmB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Add Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVj-bf-yO6">
+                                <rect key="frame" x="90" y="44" width="234" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="D6q-8F-aJv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="276"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CJw-Zh-IeQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CJw-Zh-IeQ" firstAttribute="trailing" secondItem="IXX-aA-3Ew" secondAttribute="trailing" constant="20" id="6dd-3A-Ap6"/>
                             <constraint firstItem="CJw-Zh-IeQ" firstAttribute="trailing" secondItem="2Je-N1-Lrf" secondAttribute="trailing" constant="20" id="7ar-XJ-rO8"/>
+                            <constraint firstItem="CJw-Zh-IeQ" firstAttribute="trailing" secondItem="pVj-bf-yO6" secondAttribute="trailing" constant="90" id="Cpd-74-3Hs"/>
                             <constraint firstItem="BEH-Of-zZt" firstAttribute="top" secondItem="IXX-aA-3Ew" secondAttribute="bottom" constant="35.5" id="J6Y-J6-9T1"/>
+                            <constraint firstItem="pVj-bf-yO6" firstAttribute="leading" secondItem="CJw-Zh-IeQ" secondAttribute="leading" constant="90" id="OUR-eu-zpH"/>
+                            <constraint firstItem="D6q-8F-aJv" firstAttribute="top" secondItem="pVj-bf-yO6" secondAttribute="bottom" constant="8" symbolic="YES" id="VF4-pb-DTX"/>
                             <constraint firstItem="IXX-aA-3Ew" firstAttribute="top" secondItem="2Je-N1-Lrf" secondAttribute="bottom" constant="86" id="Wrs-ZI-1NI"/>
                             <constraint firstItem="CJw-Zh-IeQ" firstAttribute="bottom" secondItem="BEH-Of-zZt" secondAttribute="bottom" constant="225" id="je2-sF-WzL"/>
                             <constraint firstItem="CJw-Zh-IeQ" firstAttribute="trailing" secondItem="BEH-Of-zZt" secondAttribute="trailing" constant="20" id="qIQ-cf-pD9"/>
@@ -928,7 +1005,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="New post" id="pfP-5b-VWU"/>
                     <connections>
+                        <outlet property="descriptionTxt" destination="IXX-aA-3Ew" id="A2n-9T-KAE"/>
                         <outlet property="postImg" destination="D6q-8F-aJv" id="Tmy-S9-9w5"/>
+                        <outlet property="save" destination="BEH-Of-zZt" id="MgU-4d-UXq"/>
+                        <outlet property="saveBtn" destination="BEH-Of-zZt" id="Umh-Qr-tJK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFa-w4-bLV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -937,7 +1017,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YGm-WZ-qc3"/>
+        <segue reference="UT8-Oj-IBZ"/>
         <segue reference="Way-rZ-aCs"/>
         <segue reference="AkD-6c-ULb"/>
     </inferredMetricsTieBreakers>

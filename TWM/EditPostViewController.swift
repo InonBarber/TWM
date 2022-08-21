@@ -9,7 +9,22 @@ import UIKit
 
 class EditPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    
 
+    @IBOutlet weak var descriptionBtn: UITextField!
+    
+    @IBOutlet weak var postImg: UIImageView!
+    
+    
+    @IBAction func cancleBtn(_ sender: Any) {
+    }
+    
+    @IBAction func saveBtn(_ sender: Any) {
+    }
+    
+    @IBAction func deleteBtn(_ sender: Any) {
+    }
+    
     @IBAction func openGallery(_ sender: Any) {
         
         takePicture(source: .photoLibrary)
@@ -18,8 +33,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         
         takePicture(source: .camera)
     }
-
-    @IBOutlet weak var postImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
