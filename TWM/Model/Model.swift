@@ -109,7 +109,7 @@ class Model{
         firebaseModel.createUser(email: email, password: password, completionBlock: completion)
     }
     
-    func signIn(email: String, password: String, completion: @escaping (_ success: Bool)->Void){
+    func login(email: String, password: String, completion: @escaping (_ success: Bool)->Void){
         firebaseModel.signIn(email: email, password: password, completionBlock: completion)
     }
     
