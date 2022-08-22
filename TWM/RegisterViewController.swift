@@ -14,9 +14,11 @@ class RegisterViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
     func checkPassword(password:String)->Bool{
         if(password.count < 5){
             return false
+
         }
         return true
     }
@@ -28,13 +30,7 @@ class RegisterViewController: UIViewController {
         return emailC.evaluate(with: email)
     }
     
-   func myalert(title: String, msg: String){
-       let alertC = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-       let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
-       alertC.addAction(okBtn)
-       self.dismiss(animated: false) { () -> Void in
-           self.present(alertC, animated: true, completion: nil)
-       }
+  \
         
         
         
