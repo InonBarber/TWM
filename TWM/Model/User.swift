@@ -27,6 +27,7 @@ extension User{
         user.lastName = json["lastName"] as? String
         user.email = json["email"] as? String
         user.posts = json["posts"] as? [String]
+        user.phone = json["phone"] as? String
 
         return user
     }
@@ -37,6 +38,7 @@ extension User{
         json["lastName"] = self.lastName
         json["email"] = self.email
         json["posts"] = self.posts
+        json["phone"] = self.phone
        return json
     }
 }
