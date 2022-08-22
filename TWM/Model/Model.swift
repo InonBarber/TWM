@@ -133,3 +133,4 @@ class Model{
            firebaseModel.checkIfUserExist(email: email, completion: completion)
     }
 }
+

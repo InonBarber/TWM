@@ -29,18 +29,11 @@
                         <viewLayoutGuide key="safeArea" id="jhd-eZ-VIn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jhd-eZ-VIn" firstAttribute="trailing" secondItem="9C2-4N-LPJ" secondAttribute="trailing" constant="20" id="5fM-1Y-bOy"/>
-                            <constraint firstItem="jhd-eZ-VIn" firstAttribute="bottom" secondItem="VSl-dh-kwv" secondAttribute="bottom" constant="30" id="MtM-LG-3Q7"/>
-                            <constraint firstItem="9C2-4N-LPJ" firstAttribute="top" secondItem="jhd-eZ-VIn" secondAttribute="top" constant="40" id="SzI-TE-I1b"/>
-                            <constraint firstItem="9C2-4N-LPJ" firstAttribute="leading" secondItem="jhd-eZ-VIn" secondAttribute="leading" constant="20" id="WEi-uU-Y2t"/>
-                            <constraint firstItem="VSl-dh-kwv" firstAttribute="leading" secondItem="jhd-eZ-VIn" secondAttribute="leading" constant="20" id="kTt-Ng-G9Y"/>
-                            <constraint firstItem="jhd-eZ-VIn" firstAttribute="trailing" secondItem="VSl-dh-kwv" secondAttribute="trailing" constant="20" id="ygJ-Tt-Vfg"/>
-                        </constraints>
-                    </view>
 
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ta2-za-fTg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ySB-t7-yKo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="728.98550724637687" y="742.63392857142856"/>
         </scene>

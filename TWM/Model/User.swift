@@ -13,8 +13,7 @@ class User{
     public var email: String? = ""
     public var phone: String? = ""
     public var posts: [String]?
-
-
+    
     init(){}
 
 }
@@ -39,6 +38,6 @@ extension User{
         json["email"] = self.email
         json["posts"] = self.posts
         json["phone"] = self.phone
-       return json
+
     }
 }
