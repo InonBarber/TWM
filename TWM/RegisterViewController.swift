@@ -79,11 +79,11 @@ class RegisterViewController: UIViewController {
             }
             
            func myalert(title: String, msg: String){
-               let alertC = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+               let alertCo = UIAlertController(title: title, message: msg, preferredStyle: .alert)
                let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
-               alertC.addAction(okBtn)
+               alertCo.addAction(okBtn)
                self.dismiss(animated: false) { () -> Void in
-                   self.present(alertC, animated: true, completion: nil)
+                   self.present(alertCo, animated: true, completion: nil)
                }
                 
                 
