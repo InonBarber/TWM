@@ -9,88 +9,84 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="6mp-vq-f4U">
             <objects>
-                <viewController id="FnL-dp-W5S" sceneMemberID="viewController">
+                <viewController id="FnL-dp-W5S" customClass="LoginViewController" customModule="TWM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Il-0s-5Vi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPZ-XC-sJc">
-                                <rect key="frame" x="20" y="244" width="70.5" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JY-vN-F4D">
-                                <rect key="frame" x="165.5" y="246" width="228.5" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-8S-GdI">
-                                <rect key="frame" x="165" y="330" width="229" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx8-v3-gtn">
-                                <rect key="frame" x="20" y="325" width="125" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gl-zv-p07">
-                                <rect key="frame" x="90" y="722" width="234" height="38"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Take Me In">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Hbg-bR-5M0" kind="show" id="UT8-Oj-IBZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3A-w5-rkR">
-                                <rect key="frame" x="90" y="780" width="234" height="32"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="To Register">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="frs-RX-APY" kind="show" id="vhX-Hg-ODC"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAu-f8-g1a">
-                                <rect key="frame" x="80" y="128" width="254" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ybr-mG-BnY">
+                                <rect key="frame" x="20" y="500" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4O-fz-gy5">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zKQ-BM-0cY"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Take Me In">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="TakeMeIn:" destination="FnL-dp-W5S" eventType="touchUpInside" id="J7j-To-S0Y"/>
+                                            <segue destination="Hbg-bR-5M0" kind="show" identifier="takeMeIn" id="0vr-62-syI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSd-Zc-fJi">
+                                        <rect key="frame" x="192" y="0.0" width="182" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="To Register">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ToRegister:" destination="FnL-dp-W5S" eventType="touchUpInside" id="ooz-WK-OjG"/>
+                                            <segue destination="frs-RX-APY" kind="show" identifier="toRegister" id="jPO-cg-JFg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="5vj-8x-x1W">
+                                <rect key="frame" x="20" y="278" width="374" height="150"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GiB-yY-fGM">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0M-fj-8nj">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZoH-sp-Rn7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="n0M-fj-8nj" firstAttribute="height" secondItem="GiB-yY-fGM" secondAttribute="height" id="2UJ-PR-dJl"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JAh-2T-woP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yx8-v3-gtn" firstAttribute="leading" secondItem="JAh-2T-woP" secondAttribute="leading" constant="20" id="10Q-2Y-uWg"/>
-                            <constraint firstItem="JAh-2T-woP" firstAttribute="trailing" secondItem="P6f-8S-GdI" secondAttribute="trailing" constant="20" id="3Sg-A5-8iV"/>
-                            <constraint firstItem="1JY-vN-F4D" firstAttribute="leading" secondItem="dPZ-XC-sJc" secondAttribute="trailing" constant="75" id="AxC-wh-TpU"/>
-                            <constraint firstItem="JAh-2T-woP" firstAttribute="bottom" secondItem="X3A-w5-rkR" secondAttribute="bottom" constant="50" id="H4D-xD-JvL"/>
-                            <constraint firstItem="dPZ-XC-sJc" firstAttribute="leading" secondItem="JAh-2T-woP" secondAttribute="leading" constant="20" id="INU-rU-03G"/>
-                            <constraint firstItem="X3A-w5-rkR" firstAttribute="top" secondItem="1gl-zv-p07" secondAttribute="bottom" constant="20" id="QVF-1v-ztF"/>
-                            <constraint firstItem="JAh-2T-woP" firstAttribute="trailing" secondItem="X3A-w5-rkR" secondAttribute="trailing" constant="90" id="RQB-Hg-XW5"/>
-                            <constraint firstItem="JAh-2T-woP" firstAttribute="trailing" secondItem="1gl-zv-p07" secondAttribute="trailing" constant="90" id="dpI-RD-UXS"/>
-                            <constraint firstItem="P6f-8S-GdI" firstAttribute="leading" secondItem="yx8-v3-gtn" secondAttribute="trailing" constant="20" id="gf9-KE-Y7B"/>
-                            <constraint firstItem="yx8-v3-gtn" firstAttribute="top" secondItem="dPZ-XC-sJc" secondAttribute="bottom" constant="45" id="hZP-oQ-X82"/>
-                            <constraint firstItem="JAh-2T-woP" firstAttribute="trailing" secondItem="1JY-vN-F4D" secondAttribute="trailing" constant="20" id="iDK-y9-5RG"/>
-                            <constraint firstItem="X3A-w5-rkR" firstAttribute="leading" secondItem="JAh-2T-woP" secondAttribute="leading" constant="90" id="mJ2-rq-FDa"/>
-                            <constraint firstItem="JAh-2T-woP" firstAttribute="trailing" secondItem="UAu-f8-g1a" secondAttribute="trailing" constant="80" id="nOq-W0-6Aj"/>
-                            <constraint firstItem="1JY-vN-F4D" firstAttribute="top" secondItem="UAu-f8-g1a" secondAttribute="bottom" constant="70" id="oWe-VD-k07"/>
-                            <constraint firstItem="P6f-8S-GdI" firstAttribute="top" secondItem="1JY-vN-F4D" secondAttribute="bottom" constant="50" id="pgP-5A-cVW"/>
-                            <constraint firstItem="UAu-f8-g1a" firstAttribute="top" secondItem="JAh-2T-woP" secondAttribute="top" constant="40" id="s9S-UY-lEf"/>
-                            <constraint firstItem="dPZ-XC-sJc" firstAttribute="top" secondItem="JAh-2T-woP" secondAttribute="top" constant="156" id="t9d-4U-Kuy"/>
-                            <constraint firstItem="UAu-f8-g1a" firstAttribute="leading" secondItem="JAh-2T-woP" secondAttribute="leading" constant="80" id="xiz-RK-v2T"/>
-                            <constraint firstItem="1gl-zv-p07" firstAttribute="leading" secondItem="JAh-2T-woP" secondAttribute="leading" constant="90" id="yes-FH-e9U"/>
+                            <constraint firstItem="JAh-2T-woP" firstAttribute="trailing" secondItem="ybr-mG-BnY" secondAttribute="trailing" constant="20" id="QDk-Rh-rWl"/>
+                            <constraint firstItem="5vj-8x-x1W" firstAttribute="top" secondItem="JAh-2T-woP" secondAttribute="top" constant="190" id="XV6-JA-xN8"/>
+                            <constraint firstItem="JAh-2T-woP" firstAttribute="bottom" secondItem="ybr-mG-BnY" secondAttribute="bottom" constant="312" id="dSi-7a-7S7"/>
+                            <constraint firstItem="5vj-8x-x1W" firstAttribute="leading" secondItem="JAh-2T-woP" secondAttribute="leading" constant="20" id="gBe-cQ-DEM"/>
+                            <constraint firstItem="ybr-mG-BnY" firstAttribute="leading" secondItem="JAh-2T-woP" secondAttribute="leading" constant="20" id="kXh-ww-PUV"/>
+                            <constraint firstItem="JAh-2T-woP" firstAttribute="trailing" secondItem="5vj-8x-x1W" secondAttribute="trailing" constant="20" id="txH-j4-7F8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nVW-U0-8GQ"/>
+                    <navigationItem key="navigationItem" title="Login" id="nVW-U0-8GQ"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="GiB-yY-fGM" id="bqZ-5b-uaS"/>
+                        <outlet property="passwordTextField" destination="n0M-fj-8nj" id="PgQ-mI-QTr"/>
+                        <outlet property="takeMeInBtn" destination="L4O-fz-gy5" id="8FU-To-KdF"/>
+                        <outlet property="toRegisterBtn" destination="aSd-Zc-fJi" id="LvB-Yz-b1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBd-xh-wtr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -489,6 +485,7 @@
                                             <action selector="TakeMeIn:" destination="frs-RX-APY" eventType="touchUpInside" id="3Z5-T7-MEM"/>
                                             <action selector="TakeMeIn:" destination="ySB-t7-yKo" eventType="touchUpInside" id="Ca9-u2-jcS"/>
                                             <action selector="takeMeInBtn:" destination="ySB-t7-yKo" eventType="touchUpInside" id="1rj-XT-FeO"/>
+                                            <segue destination="Hbg-bR-5M0" kind="show" identifier="takeMeIn" id="oQX-gP-86A"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -913,7 +910,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UT8-Oj-IBZ"/>
+        <segue reference="0vr-62-syI"/>
         <segue reference="Way-rZ-aCs"/>
         <segue reference="YKK-mX-sCK"/>
     </inferredMetricsTieBreakers>
