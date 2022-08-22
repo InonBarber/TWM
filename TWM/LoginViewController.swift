@@ -9,34 +9,48 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     @IBOutlet weak var takeMeInBtn: UIButton!
-    @IBOutlet weak var registerBtn: UIButton!
     
+    @IBOutlet weak var toRegisterBtn: UIButton!
     
-    
-    @IBAction func takeMeInBtn(_ sender: Any) {
-    }
-    
-    @IBAction func register(_ sender: Any) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        Model.instance.checkIfUserLoggedIn(){
+            success in
+            if (success) {
+                self.performSegue(withIdentifier: "takeMeIn", sender: nil)
+            }
+        }
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func TakeMeIn(_ sender: Any) {
+        
+        Model.instance.login(email: self.emailTextField.text!, password: self.passwordTextField.text!){ success in
+            if success{
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                let alertC = UIAlertController(title: "Faild to log in", message: "Email or password is incorrect", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                alertC.addAction(okButton)
+                self.dismiss(animated: false){ () -> Void in
+                     self.present(alertC, animated: true, completion: nil)
+                }
+            }
+        }
     }
-    */
+    
+    @IBAction func ToRegister(_ sender: Any) {
+        performSegue(withIdentifier: "toRegister", sender: self)
+    }
+    
 
 }
