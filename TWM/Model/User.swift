@@ -38,6 +38,6 @@ extension User{
         json["email"] = self.email
         json["posts"] = self.posts
         json["phone"] = self.phone
-        return json
+
     }
 }
