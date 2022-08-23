@@ -46,10 +46,8 @@ public class PostDao: NSManagedObject {
         let post = PostDao(context: context)
         post.id = post.id
         post.title = post.title
-        post.email = post.email
         post._description = post.description
         post.photo = post.photo
-        post.isPostDeleted = post.isPostDeleted
         do{
             try context.save()
         }catch let error as NSError{
@@ -67,8 +65,7 @@ public class PostDao: NSManagedObject {
         post.title = post.title
         post.email = post.email
         post._description = post.description
-        post.photo = post.photo
-        post.isPostDeleted = post.isPostDeleted
+        post.photo = post.photo        
 
         do{
             try context.save()

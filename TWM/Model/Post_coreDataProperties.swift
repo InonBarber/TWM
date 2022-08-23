@@ -15,12 +15,12 @@ extension PostDao {
         return NSFetchRequest<PostDao>(entityName: "PostDao")
     }
 
-    @NSManaged public var id: String?
+    @NSManaged public var id: String
     @NSManaged public var title: String?
     @NSManaged public var email: String?
     @NSManaged public var _description: String?
     @NSManaged public var photo: String?
-    @NSManaged public var isPostDeleted: String?
+    @NSManaged public var userId: String
 
 }
 
