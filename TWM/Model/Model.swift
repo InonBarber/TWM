@@ -125,8 +125,8 @@ class Model{
         }
     }
     
-    func updateUserPosts(user:User, posts: [String] , completion: @escaping ()->Void){
-        firebaseModel.updateUserPosts(user: user, posts: posts, completion: completion)
+    func updatePost(postId: String, post: Post, comletion: @escaping (Bool) -> Void) {
+        firebaseModel.updatePost(postId: postId, post: post, completion: comletion)
     }
     
     func checkIfUserExist(email:String,completion: @escaping (_ success: Bool)->Void){

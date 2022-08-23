@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    func switchRootViewController(rootViewController: UIViewController) {
+    private func switchRootViewController(rootViewController: UIViewController) {
         
         guard let window = self.view.window else { return }
         
@@ -20,6 +20,20 @@ extension UIViewController {
             window.rootViewController = rootViewController
             UIView.setAnimationsEnabled(oldStat)
         }
+    }
+    
+    func navigateToOnboarding() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "onboardingNavigation")
+        switchRootViewController(rootViewController: vc)
+    }
+    
+    func navigateToFeeds() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "feeds") as! FeedTableViewController
+        vc.updateData(feedType: .all)
+        let nav = UINavigationController(rootViewController: vc)
+        switchRootViewController(rootViewController: nav)
     }
     
 }

@@ -20,25 +20,11 @@ class SplashViewController: UIViewController {
         Model.instance.checkIfUserLoggedIn { [weak self] success in
             if success {
                 //navigate to feeds
-                self?.showFeeds()
+                self?.navigateToFeeds()
             } else {
                 //navigate to login
-                self?.showLogin()
+                self?.navigateToOnboarding()
             }
         }
-    }
-    
-    private func showFeeds() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "feeds") as! FeedTableViewController
-        vc.updateData(feedType: .all)
-        let nav = UINavigationController(rootViewController: vc)
-        self.switchRootViewController(rootViewController: nav)
-    }
-    
-    private func showLogin() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "onboardingNavigation")
-        self.switchRootViewController(rootViewController: vc)
     }
 }

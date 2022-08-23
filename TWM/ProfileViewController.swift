@@ -54,6 +54,14 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    @IBAction func logout(_ sender: Any) {
+        Model.instance.signOut { [weak self] success in
+            if success {
+                self?.navigateToOnboarding()
+            }
+        }
+    }
+    
     @IBAction func moveToaddPost(_ sender: Any) {
         return
     }

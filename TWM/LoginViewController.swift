@@ -16,17 +16,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var takeMeInBtn: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        Model.instance.checkIfUserLoggedIn() { [weak self] success in
-            if success {
-                self?.performSegue(withIdentifier: "takeMeIn", sender: nil)
-            }
-        }
-        
-        
-    }
     
     @IBAction func TakeMeIn(_ sender: Any) {
         

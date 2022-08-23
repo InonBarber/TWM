@@ -27,11 +27,15 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func TakeMeIn(_ sender: Any) {
+        guard let password = passwordTextField.text, let email = emailTextField.text else { return }
+                
         let user = User()
-        user.email = emailTextField.text ?? ""
+        
+        user.email = email
         user.firstName = firstNameTextField.text
         user.lastName = lastNameTextField.text
         user.phone = phoneTextField.text
+        
         let validPassword = self.checkPassword(password: self.passwordTextField.text!)
         let validEmail = self.validEmail(email: emailTextField.text!)
         if validPassword == false {
@@ -41,15 +45,15 @@ class RegisterViewController: UIViewController {
             myalert(title: "Faild to register", msg: "Email not valid")
         }
         else{
-            Model.instance.checkIfUserExist(email: user.email) { success in
+            Model.instance.checkIfUserExist(email: user.email) { [weak self] success in
                 if( success == true){
-                    self.myalert(title: "Faild to register", msg: "Email is already in use")
+                    self?.myalert(title: "Faild to register", msg: "Email is already in use")
                 }
                 else{
-                    Model.instance.createUser(email: user.email, password: self.passwordTextField.text!) {success in
+                    Model.instance.createUser(email: user.email, password: password) {success in
                         if success == true{
                             Model.instance.addUser(user: user) {
-                                self.navigationController?.popViewController(animated: true)
+                                self?.navigateToFeeds()
                             }
                         }
                     }

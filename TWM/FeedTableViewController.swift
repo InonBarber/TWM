@@ -5,6 +5,7 @@ import UIKit
 class FeedTableViewController: UITableViewController {
 
     var data = [Post]()
+    private var feedType: FeedType?
     
     enum FeedType {
         case all
@@ -13,6 +14,7 @@ class FeedTableViewController: UITableViewController {
     
     
     func updateData(feedType: FeedType) {
+        self.feedType = feedType
         switch feedType {
         case .all:
             Model.instance.getAllPosts { [weak self] posts in
@@ -28,9 +30,13 @@ class FeedTableViewController: UITableViewController {
             }
             
         }
-        
-        
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let feedType = feedType {
+            updateData(feedType: feedType)
+        }        
     }
     
 
@@ -48,28 +54,18 @@ class FeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "post", for: indexPath) as! PostTableViewCell
         let item = data[indexPath.row]
-        cell.configureCell(post: item)
+        cell.configureCell(post: item, index: indexPath.row)
         return cell
     }
-    
-    var selectedRow = 0
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NSLog("Selcted row at \(indexPath.row)")
-        selectedRow = indexPath.row
-        performSegue(withIdentifier: "openPostDetails", sender: self)
         
-        
-    }
-    
     // MARK: - Navigation
 
 //     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "openPostDetails"){
-            let dvc = segue.destination as! PostDetailsViewController
-            let st = data[selectedRow]
-            dvc.post = st
+        if segue.identifier == "editPost", let vc = segue.destination as? NewPostViewController, let button = sender as? UIButton {
+            let index = button.tag
+            let data = data[index]
+            vc.editPost(post: data)
         }
     }
     

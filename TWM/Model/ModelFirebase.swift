@@ -214,19 +214,14 @@ class ModelFirebase{
          }
      }
      
-     func updateUserPosts(user:User, posts: [String],  completion: @escaping ()->Void){
-         let id = String(user.email)
-         db.collection("Users").document(id).updateData(    [
-             "posts": posts
-         ]) { (error) in
-             if error == nil {
-                 print("User posts updated")
-             }else{
-                 print("User posts not updated")
-             }
-             completion()
-         }
-     }
+    
+    func updatePost(postId: String, post: Post, completion: @escaping (Bool) -> Void) {
+        db.collection("Posts")
+            .document(postId)
+            .setData(post.toJson()) { error in
+                completion(error != nil)
+            }
+    }
      
      
      func checkIfUserExist(email: String ,completion: @escaping (_ success: User?)->Void){
