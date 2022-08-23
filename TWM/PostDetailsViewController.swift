@@ -3,28 +3,44 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostDetailsViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleTxt: UITextField!
+    @IBOutlet weak var descriptionTxt: UITextField!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var editPostBtn: UIButton!
+    
     var post:Post?{
         didSet{
-            if(idLabel != nil){
-                idLabel.text = post?.id
-                nameLabel.text = post?.userId
+            if(titleTxt != nil){
+                updateDisplay()
             }
         }
     }
     
-    @IBOutlet weak var avatarImg: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
+    func updateDisplay(){
+        titleTxt.text = post?.title
+        descriptionTxt.text = post?.description
+
+        if let urlStr = post?.photo {
+            if (!urlStr.elementsEqual("505579")){
+                let url = URL(string: urlStr)
+                img?.kf.setImage(with: url)
+            }else{
+                img.image = UIImage(named: "505579")
+            }
+            
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let post = post {
-            idLabel.text = post.id
-            nameLabel.text = post.userId
+        
+        if post != nil {
+            updateDisplay()
         }
     }
     
