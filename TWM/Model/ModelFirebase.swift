@@ -12,6 +12,10 @@ import FirebaseStorage
 import UIKit
 import FirebaseAuth
 
+enum ModelErrors: Error {
+    case documentNotExist
+    case serverError
+}
 
 class ModelFirebase{
     
@@ -22,33 +26,33 @@ class ModelFirebase{
     init(){}
     
     func getAllPosts(since:Int64, completion:@escaping ([Post])->Void){
-        db.collection("Posts").whereField("lastUpdated", isGreaterThanOrEqualTo: Timestamp(seconds: since, nanoseconds: 0)).getDocuments() { (querySnapshot, err) in
+        db.collection("Posts").getDocuments() { (querySnapshot, err) in
             var posts = [Post]()
             if let err = err {
                 print("Error getting posts: \(err)")
                 completion(posts)
             } else {
                 for document in querySnapshot!.documents {
-                    let p = Post.FromJson(json: document.data())
-                    posts.append(p)
-                    completion(posts)
+                    let p = Post.FromJson(json: document.data(), id: document.documentID)
+                    posts.append(p)                    
                 }
+                
+                completion(posts)
             }
         }
         
     }
     
     func addPost(post:Post, completion:@escaping ()->Void){
-        db.collection("Posts").document(post.id!)
-            .setData(post.toJson())
-        { err in
-            if let err = err {
-                print("Error adding post: \(err)")
-            } else {
-                print("post added with")
+        db.collection("Posts")
+            .addDocument(data: post.toJson()) { error in
+                if let error = error {
+                    print("Error adding post: \(error.localizedDescription)")
+                } else {
+                    print("post added with")
+                }
+                completion()
             }
-            completion()
-        }
     }
     
         func getUser(byId:String, completion:@escaping ([User])->Void){
@@ -72,15 +76,13 @@ class ModelFirebase{
         
     
     func editPost(post:Post, completion:@escaping ()->Void){
-        let id = String(post.id!)
-        db.collection("Posts").document(id).updateData(    [
+        let id = String(post.id)
+        let data = [
             "description": post.description!,
             "photo": post.photo!,
-            "email": post.email!,
-            "title": post.title!,
-            "isPostDeleted": post.isPostDeleted!
-            
-        ]) { (error) in
+            "title": post.title!
+        ]
+        db.collection("Posts").document(id).updateData(data) { (error) in
             if error == nil {
                 print("Post updated")
             }else{
@@ -91,7 +93,7 @@ class ModelFirebase{
     }
     
     func deletePost(post:Post, completion:@escaping ()->Void){
-        db.collection("Posts").document(post.id!).delete() { err in
+        db.collection("Posts").document(post.id).delete() { err in
             if let err = err {
                 print("Error deleting post: \(err)")
             } else {
@@ -101,16 +103,19 @@ class ModelFirebase{
         }
     }
     
-    func uploadImage(name: String, image: UIImage, callback: @escaping (_ url:String)-> Void){
+    func uploadImage(image: UIImage, callback: @escaping (_ url:String)-> Void){
         let storageRef = storage.reference()
-        let imageRef = storageRef.child(name)
+        let uuid = UUID().uuidString
+        let imageRef = storageRef.child("images/\(uuid).jpg")
         let data = image.jpegData(compressionQuality: 0.8)
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         imageRef.putData(data!, metadata: metaData) { (metaData, error) in
             imageRef.downloadURL { (url, error) in
-                let urlString = url?.absoluteString
-                callback(urlString!)
+                guard let downloadURL = url else {
+                    return
+                }
+                callback(downloadURL.absoluteString)
             }
         }
     }
@@ -119,29 +124,30 @@ class ModelFirebase{
     
     //USER
      
-     func getConnectedUser(completion:@escaping (User)->Void){
+     func getConnectedUser(completion:@escaping (Result<User, ModelErrors>)->Void) {
          let docRef = Firestore.firestore().collection("Users").document(Auth.auth().currentUser?.email ?? "")
          docRef.getDocument {
              (document, error) in
-             var user = User()
-             if let error = error{
+             
+             if let error = error {
                  print("TAG USER\(error)")
-                 completion(user)
+                 completion(.failure(.serverError))
+                 return
              }
-             else{
-                 guard let document = document, document.exists else {
-                     print("Document does not exist")
-                     return
-                 }
-                 let dataDescription = document.data()
-                 user = User.FromJson(json: dataDescription!)
-                 completion(user)
+     
+             guard let document = document, document.exists, let dataDescription = document.data() else {
+                 print("Document does not exist")
+                 completion(.failure(.documentNotExist))
+                 return
              }
+                                                    
+             let user = User.FromJson(json: dataDescription)
+             completion(.success(user))
          }
      }
      
      func addUser(user:User, completion:@escaping ()->Void){
-         db.collection("Users").document(user.email!)
+         db.collection("Users").document(user.email)
              .setData(user.toJson())
          { err in
              if let err = err {
@@ -197,7 +203,7 @@ class ModelFirebase{
      }
      
      func updateUserPosts(user:User, posts: [String],  completion: @escaping ()->Void){
-         let id = String(user.email!)
+         let id = String(user.email)
          db.collection("Users").document(id).updateData(    [
              "posts": posts
          ]) { (error) in
@@ -211,15 +217,19 @@ class ModelFirebase{
      }
      
      
-     func checkIfUserExist(email: String ,completion: @escaping (_ success: Bool)->Void){
+     func checkIfUserExist(email: String ,completion: @escaping (_ success: User?)->Void){
          db.collection("Users").document(email).getDocument {
              (document, error) in
-             guard let document = document, document.exists else {
-                 print("User does not exist")
-                 completion(false)
+             
+             guard let document = document, document.exists, let dataDescription = document.data() else {
+                 print("Document does not exist")
+                 completion(nil)
                  return
              }
-             completion(true)
+                                                    
+             let user = User.FromJson(json: dataDescription)
+                                                    
+             completion(user)
          }
      }
     

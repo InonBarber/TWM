@@ -9,19 +9,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var firstNameTxt: UITextField!
-    @IBOutlet weak var lastNameTxt: UITextField!
-    @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var phoneTxt: UITextField!
-    
-    @IBOutlet weak var editPostBtn: UIButton!
     @IBOutlet weak var addPostBtn: UIButton!
     
-    @IBAction func addPostBtn(_ sender: Any) {
-    }
-    
-    @IBAction func editPostBtn(_ sender: Any) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,4 +29,8 @@ class ProfileViewController: UIViewController {
     }
     */
 
+    @IBAction func moveToaddPost(_ sender: Any) {
+        
+        
+    }
 }

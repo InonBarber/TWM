@@ -25,42 +25,32 @@ class ModelNotificatiponBase{
         NSLog("post notify")
         NotificationCenter.default.post(name: Notification.Name(name), object: self)
     }
-
+    
 }
 
 class Model{
-
-
+    
+    
     let firebaseModel = ModelFirebase()
     let dispatchQueue = DispatchQueue(label: "com.Barber.TWM")
-
+    
     // Notification center
     static let postDataNotification = ModelNotificatiponBase("com.Barber.TWM")
     
     static let instance = Model()
     
+    var user: User?
+    
+    func getUserPosts(userId: String, completion:@escaping ([Post]) -> Void) {
+        
+    }
+    
     func getAllPosts(completion:@escaping ([Post])->Void){
         //get the Local Last Update data
-        var lup = PostDao.localLastUpdated()
+        let lup = PostDao.localLastUpdated()
         //fetch all updated records from firebase
         firebaseModel.getAllPosts(since: lup){ posts in
-            //insert all records to local DB
-            NSLog("TAG firebaseModel.getAllPosts in \(posts.count)")
-            self.dispatchQueue.async{
-                for post in posts {
-                    NSLog("TAG post.title " + post.title!)
-                    NSLog("TAG post.title " + post.isPostDeleted!)
-                    PostDao.add(post: post)
-                }
-                //update the local last update date
-                PostDao.setLocalLastUpdated(date: lup)
-      
-                DispatchQueue.main.async {
-                    //return all records to caller
-                    completion(PostDao.getAllPosts())
-
-                }
-            }
+            completion(posts)
         }
         
     }
@@ -93,8 +83,8 @@ class Model{
         }
     }
     
-    func uploadImage(name:String, image:UIImage, callback:@escaping(_ url:String)->Void){
-        firebaseModel.uploadImage(name: name, image: image, callback: callback)
+    func uploadImage(image:UIImage, callback:@escaping(_ url:String)->Void){
+        firebaseModel.uploadImage(image: image, callback: callback)
     }
     
     
@@ -117,20 +107,27 @@ class Model{
         firebaseModel.signOut(completion: completion)
     }
     
-    func getUserDetails(completion:@escaping (User)->Void){
+    func getUserDetails(completion:@escaping (Result<User, ModelErrors>)->Void){
         firebaseModel.getConnectedUser(completion: completion)
     }
     
     func checkIfUserLoggedIn(completion:@escaping (_ success: Bool)->Void){
         firebaseModel.checkIfUserLoggedIn(completion: completion)
     }
-
-   func updateUserPosts(user:User, posts: [String] , completion: @escaping ()->Void){
+    
+    func updateUserPosts(user:User, posts: [String] , completion: @escaping ()->Void){
         firebaseModel.updateUserPosts(user: user, posts: posts, completion: completion)
     }
     
     func checkIfUserExist(email:String,completion: @escaping (_ success: Bool)->Void){
-           firebaseModel.checkIfUserExist(email: email, completion: completion)
+        firebaseModel.checkIfUserExist(email: email) { [weak self] user in
+            guard let user = user else {
+                completion(false)
+                return
+            }
+            self?.user = user
+            completion(true)
+        }
     }
 }
 
