@@ -20,8 +20,8 @@ class FeedTableViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
         case .myFeeds:
-            if let user = Model.instance.user {
-                Model.instance.getUserPosts(userId: user.email) { [weak self] posts in
+            if let email = Model.instance.email {
+                Model.instance.getUserPosts(userId: email) { [weak self] posts in
                     self?.data = posts
                     self?.tableView.reloadData()
                 }

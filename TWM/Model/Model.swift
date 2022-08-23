@@ -11,6 +11,7 @@ import CoreData
 
 class ModelNotificatiponBase{
     let name:String
+    
     init(_ name:String){
         self.name=name
     }
@@ -39,10 +40,10 @@ class Model{
     
     static let instance = Model()
     
-    var user: User?
+    var email: String?
     
     func getUserPosts(userId: String, completion:@escaping ([Post]) -> Void) {
-        
+        firebaseModel.getMyPosts(email: userId, completion: completion)
     }
     
     func getAllPosts(completion:@escaping ([Post])->Void){
@@ -54,6 +55,7 @@ class Model{
         }
         
     }
+
     
     func addPost(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPost(post: post){
@@ -112,7 +114,15 @@ class Model{
     }
     
     func checkIfUserLoggedIn(completion:@escaping (_ success: Bool)->Void){
-        firebaseModel.checkIfUserLoggedIn(completion: completion)
+        firebaseModel.checkIfUserLoggedIn { email in
+            if let email = email {
+                self.email = email
+                completion(true)
+                return
+            }
+            
+            completion(false)
+        }
     }
     
     func updateUserPosts(user:User, posts: [String] , completion: @escaping ()->Void){
@@ -125,7 +135,7 @@ class Model{
                 completion(false)
                 return
             }
-            self?.user = user
+            self?.email = user.email
             completion(true)
         }
     }

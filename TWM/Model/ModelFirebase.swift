@@ -43,6 +43,22 @@ class ModelFirebase{
         
     }
     
+    func getMyPosts(email:String, completion:@escaping ([Post]) -> Void){
+        db.collection("Posts").whereField("userId", isEqualTo: email).getDocuments { (querySnapshot, err) in
+            var posts = [Post]()
+            if let err = err {
+                print("Error getting posts: \(err)")
+                completion(posts)
+            } else {
+                for document in querySnapshot!.documents {
+                    let p = Post.FromJson(json: document.data(), id: document.documentID)
+                    posts.append(p)
+                }
+                
+                completion(posts)
+            }
+        }
+    }
     func addPost(post:Post, completion:@escaping ()->Void){
         db.collection("Posts")
             .addDocument(data: post.toJson()) { error in
@@ -192,13 +208,9 @@ class ModelFirebase{
          }
      }
      
-     func checkIfUserLoggedIn(completion:@escaping (_ success: Bool)->Void){
+     func checkIfUserLoggedIn(completion: @escaping (String?) -> Void){
          Auth.auth().addStateDidChangeListener { auth, user in
-             if user != nil{
-                 completion(true)
-             } else {
-                 completion(false)
-             }
+             completion(user?.email)
          }
      }
      
